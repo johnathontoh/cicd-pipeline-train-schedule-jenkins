@@ -1,10 +1,10 @@
 pipeline {
-agent any #run on any agent
+agent any 
 stages {
  stage('Build') {
   steps {
    echo 'Running build automation'
-   sh'./gradlew build --no-daemon' #daemon is a background process that speeds up build, no need for it in the pipeline
+   sh'./gradlew build --no-daemon' 
    archiveArtifacts artifacts: 'dist/trainSchedule.zip'
    }
   }
